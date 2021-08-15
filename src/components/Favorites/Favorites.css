@@ -1,10 +1,15 @@
 .favorites {
     box-sizing: border-box;
-    border: 1px solid rgba(0, 8, 7);
+    margin: 0px 10px 30px 0px;
     padding: 30px 20px;
+    background: #52555b;
+    border-radius: 5px;
+    box-shadow: 0px 0px 16px #e03e10;
+    border: 0.3px solid #e03e10;
 }
 
 .favorites__name {
+    background: #e5f7f7;
     box-sizing: border-box;
     width: 100%;
     font-size: 16px;
@@ -19,15 +24,52 @@
 
 .favorites__save {
     border: none;
-    background-color: #496DDB;
+    background-color: #e03e10;
     padding: 10px 15px;
-    color: #FFEEDB;
     font-size: 14px;
     transition: all 0.2s linear;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px #fff;
+    border-radius: 5px;
+    color: white;
+
 }
 
 .favorites__save:hover {
     cursor: pointer;
     opacity: 0.9;
     transition: all 0.2s linear;
+    background-color: yellow;
+    color: black;
+}
+
+.favorites__list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+    color: #ffffff;
+}
+
+.favorites-delete {
+    border-radius: 13px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 0px 0px 5px #e03e10;
+    border: 1px solid #e03e10;
+}
+
+.favorites-delete:hover {
+    cursor: pointer;
+    background-color: yellow;
+}
+
+.favorites-link {
+    color: #e03e10;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.favorites-link:hover {
+    color: yellow;
 }

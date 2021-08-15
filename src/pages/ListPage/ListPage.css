@@ -1,12 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 .list-page {
-    padding: 42px calc(50% - 300px);
+    margin: 0 auto;
 }
 
-.list-page__title {
+.list-page-title {
+    font-family: 'Luckiest Guy', cursive;
+
     font-size: 34px;
     margin-bottom: 26px;
+    text-align: center;
+    color: #e03e10;
 }
 
-.list-page ul li {
-    font-size: 18px;
+.list-page-flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.list-page-block {
+    width: 240px;
+    font-size: 20px;
+    border: 1px solid white;
+    padding: 20px;
+    background: #52555b;
+    border-radius: 5px;
+    box-shadow: 0px 0px 16px #e03e10;
+    border: 0.3px solid #e03e10;
+    margin: 10px;
+}
+
+
+.list-page-link {
+
+    padding: 10px;
+    text-align: center;
+    color: #e03e10;
+}
+
+.list-page-link:hover {
+    cursor: pointer;
+    color: yellow;
+    
+}
+.list-page-img {
+    margin: 30px 20px;
+    width: 200px;
+    height: 300px;
+    /* border: 20px solid black; */
+    box-shadow: 0 0 10px #fff;
 }

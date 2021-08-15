@@ -1,34 +1,45 @@
-import React, { Component } from 'react';
-import './ListPage.css';
+import React, { Component } from "react";
+import "./ListPage.css";
+import { getNewIdMovies } from "../../getAPI";
 
-class ListPage extends Component {
-    state = {
-        movies: [
-            { title: 'The Godfather', year: 1972, imdbID: 'tt0068646' }
-        ]
-    }
-    componentDidMount() {
-        const id = this.props.match.params;
-        console.log(id);
-        // TODO: запрос к сервер на получение списка
-        // TODO: запросы к серверу по всем imdbID
-    }
-    render() { 
-        return (
-            <div className="list-page">
-                <h1 className="list-page__title">Мой список</h1>
-                <ul>
-                    {this.state.movies.map((item) => {
-                        return (
-                            <li key={item.imdbID}>
-                                <a href="https://www.imdb.com/title/tt0068646/" target="_blank">{item.title} ({item.year})</a>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
-        );
-    }
+export default class ListPage extends Component {
+  state = {
+    title: "",
+    movies: [],
+  };
+
+  componentDidMount() {
+    const id = this.props.match.params.listId;
+    console.log(id);
+    getNewIdMovies(id).then((list) => {
+      this.setState(list);
+    });
+  }
+  render() {
+    return (
+      <div className="list-page">
+        <h1 className="list-page-title">My List</h1>
+        <div className="list-page-flex">
+          {this.state.movies.map((item) => {
+            return (
+              <div key={item.imdbID} className="list-page-block">
+                <a
+                  className="list-page-link"
+                  href={`https://www.imdb.com/title/${item.imdbID}/`}
+                  target="_blank"
+                >
+                  {item.Title} {item.Year}
+                </a>
+                <img
+                  src={item.Poster}
+                  alt={item.Title}
+                  className="list-page-img"
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 }
- 
-export default ListPage;

@@ -1,7 +1,17 @@
+.main-page {
+    box-shadow: 0px 0px 20px #e03e10;
+    border-radius: 20px;
+}
+
+.main-page__movies {
+    padding: 15px;
+
+}
+
 .main-page__content {
-    padding: 42px calc(50% - 500px);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    border-radius: 0 0 20px 20px
 }
 
 .main-page__main-section {
@@ -15,5 +25,5 @@
 }
 
 .main-page__favorites {
-    width: 35%;   
+    width: 35%;
 }
